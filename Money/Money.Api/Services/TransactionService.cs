@@ -80,7 +80,7 @@ namespace Money.Api.Services
             {
                 var msg = $"UserId = {dto.UserId} is not allowed to make more purchases this month";
                 _logger.LogWarning(msg);
-                throw new InvalidRequestException(msg);
+                throw new InvalidRequestException(msg, AppErrorType.AppUserCannotMakeAPurchase);
             }
 
             var transaction = new Transaction

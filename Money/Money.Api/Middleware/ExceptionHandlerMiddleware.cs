@@ -62,18 +62,18 @@ namespace Money.Api.Middleware
                     break;
                 case CurrencyException currencyEx:
                     code = HttpStatusCode.InternalServerError;
-                    response.ErrorMessageId = currencyEx.ErrorMessageId.GetErrorCode();
-                    response.ErrorMessage = currencyEx.Message;
+                    response.ErrorMessageId = currencyEx.ErrorType.GetErrorCode();
+                    response.ErrorMessage = currencyEx.ErrorType.GetErrorMsg();
                     break;
                 case NotFoundException notFoundEx:
                     code = HttpStatusCode.NotFound;
-                    response.ErrorMessageId = notFoundEx.ErrorMessageId.GetErrorCode();
-                    response.ErrorMessage = notFoundEx.Message;
+                    response.ErrorMessageId = notFoundEx.ErrorType.GetErrorCode();
+                    response.ErrorMessage = notFoundEx.ErrorType.GetErrorMsg();
                     break;
                 case InvalidRequestException invEx:
                     code = HttpStatusCode.BadRequest;
-                    response.ErrorMessageId = invEx.ErrorMessageId.GetErrorCode();
-                    response.ErrorMessage = invEx.Message;
+                    response.ErrorMessageId = invEx.ErrorType.GetErrorCode();
+                    response.ErrorMessage = invEx.ErrorType.GetErrorMsg();
                     break;
                 default:
                     logger.LogError(exception, $"{nameof(HandleExceptionAsync)}: Unknown exception was captured");

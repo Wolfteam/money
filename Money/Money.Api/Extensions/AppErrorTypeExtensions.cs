@@ -13,6 +13,8 @@ namespace Money.Api.Extensions
                 AppErrorType.AppUnknownErrorOccurred => "Unknown error occurred",
                 AppErrorType.AppInvalidRequest => "Invalid request",
                 AppErrorType.AppTodaysPriceCouldNotBeRetrieved => "Today's price could not be retrieved",
+                AppErrorType.AppNotFound => "The resource was not found",
+                AppErrorType.AppUserCannotMakeAPurchase => "User cannot make purchases",
                 _ => throw new ArgumentOutOfRangeException(nameof(msg), msg, null)
             };
         }

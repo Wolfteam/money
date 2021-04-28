@@ -5,6 +5,7 @@
         AppUnknownErrorOccurred,
         AppInvalidRequest,
         AppTodaysPriceCouldNotBeRetrieved,
-        AppNotFound
+        AppNotFound,
+        AppUserCannotMakeAPurchase
     }
 }

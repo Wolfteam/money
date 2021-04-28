@@ -60,9 +60,9 @@ namespace Money.Api
             app.UseRouting();
             app.UseCors(options =>
                 options
+                    .AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader()
-                    .AllowCredentials()
             );
             app.UseMiddleware<ExceptionHandlerMiddleware>();
             //app.UseAuthentication();

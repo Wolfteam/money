@@ -5,24 +5,24 @@ namespace Money.Api.Exceptions
 {
     public abstract class BaseAppException : Exception
     {
-        public AppErrorType ErrorMessageId { get; }
+        public AppErrorType ErrorType { get; }
 
-        protected BaseAppException(string message, AppErrorType errorMessageId)
+        protected BaseAppException(string message, AppErrorType errorType)
             : base(message)
         {
-            ErrorMessageId = errorMessageId;
+            ErrorType = errorType;
         }
 
         private BaseAppException()
             : base()
         {
-            ErrorMessageId = AppErrorType.AppInvalidRequest;
+            ErrorType = AppErrorType.AppInvalidRequest;
         }
 
         private BaseAppException(string message)
             : base(message)
         {
-            ErrorMessageId = AppErrorType.AppInvalidRequest;
+            ErrorType = AppErrorType.AppInvalidRequest;
         }
 
         private BaseAppException(string message, Exception innerException)
