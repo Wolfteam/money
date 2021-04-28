@@ -1,0 +1,27 @@
+<app-today-price></app-today-price>
+
+<hr/>
+
+<form [formGroup]="formGroup" (ngSubmit)="createTransaction()">
+  <div class="row">
+    <div class="col-12">
+      <label>
+        Moneda a comprar:
+        <select formControlName="currencyType">
+          <option *ngFor="let currency of currencies" value="{{currency.currency}}">{{currency.name}}</option>
+        </select>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <label>
+        Monto:
+        <input type="text" formControlName="amount">
+      </label>
+    </div>
+  </div>
+
+
+  <button type="submit" [disabled]="!formGroup.valid || isBusy">Comprar</button>
+</form>

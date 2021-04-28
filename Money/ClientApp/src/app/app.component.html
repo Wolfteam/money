@@ -1,0 +1,12 @@
+<body>
+  <div *ngIf="isProgressBarVisible" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <button (click)="onGoBackClick()" *ngIf="isBackButtonVisible">GoBack</button>
+      </div>
+    </div>
+    <h2>{{title}}</h2>
+    <router-outlet></router-outlet>
+  </div>
+</body>
